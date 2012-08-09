@@ -1,0 +1,6 @@
+/**
+ * Pelagios search map library
+ * @license GPL v3(see LICENSE.txt)
+ */
+
+define(["app/loadGMaps!lib/async!http://maps.google.com/maps/api/js?sensor=false"],function(){function e(e){if(!document.getElementById(e))throw Error("ERROR: Invalid ID for search map");try{var t=new google.maps.Map(document.getElementById(e),{mapTypeId:google.maps.MapTypeId.TERRAIN})}catch(n){console.log("ERROR: Failed to create Google Map for element id "+e+" : "+n)}var r=new google.maps.LatLngBounds,i=new google.maps.InfoWindow;this.refresh=function(){google.maps.event.trigger(t,"resize"),t.fitBounds(r)},this.addMarker=function(e,n,s,o){if(e.hasOwnProperty("geometry")&&e.geometry!=null&&e.geometry.hasOwnProperty("type")&&e.geometry.type=="Point"){var u=new google.maps.LatLng(e.geometry.coordinates[1],e.geometry.coordinates[0]),a=new google.maps.Marker({position:u,map:t,title:n});r.extend(u),google.maps.event.addListener(a,"click",function(){return function(){i.close(),i.setContent(s),i.open(t,a),o()}}())}}}return{SearchMap:e}})
