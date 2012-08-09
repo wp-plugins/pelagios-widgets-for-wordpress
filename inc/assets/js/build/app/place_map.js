@@ -1,0 +1,6 @@
+/**
+ * Pelagios place map library
+ * @license GPL v3(see LICENSE.txt)
+ */
+
+define(["app/loadGMaps!lib/async!http://maps.google.com/maps/api/js?sensor=false"],function(){function e(e){if(!document.getElementById(e))throw Error("ERROR: Invalid ID for place map");try{var t=new google.maps.Map(document.getElementById(e),{zoom:8,mapTypeId:google.maps.MapTypeId.TERRAIN})}catch(n){console.log("ERROR: Failed to crate Google map for element id "+e+" : "+n)}try{var r=new google.maps.Marker({map:t})}catch(n){console.log("ERROR: Failed to create Google Map marker : "+n)}this.refresh=function(){try{google.maps.event.trigger(t,"resize")}catch(e){console.log("ERROR: Failed to resize Google map :"+e)}try{t.setCenter(r.getPosition())}catch(e){console.log("ERROR: Failed to center Google Map : "+e)}},this.setMarker=function(e,n){try{var i=new google.maps.LatLng(e[1],e[0])}catch(s){console.log("ERROR: Failed to create Google Maps location : "+s)}try{r.setPosition(i)}catch(s){console.log("ERROR: Failed to set marker position : "+s)}try{r.setTitle(n)}catch(s){console.log("ERROR: Failed to set marker title : "+s)}try{t.setCenter(i)}catch(s){console.log("ERROR: Failed to center Google Map : "+s)}try{google.maps.event.trigger(t,"resize")}catch(s){console.log("ERROR: Failed to resize Google Map : "+s)}}}return{PlaceMap:e}})

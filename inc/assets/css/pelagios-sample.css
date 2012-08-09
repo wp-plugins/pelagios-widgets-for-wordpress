@@ -1,0 +1,12 @@
+/**
+ * To override the default styles that ship with Pelagios Widgets, copy this file to the stylesheet directory
+ * of your WordPress theme and rename it to pelagios.css.
+ * 
+ * Example: http://mysite.com/wp-content/themes/twentyeleven/pelagios.css
+ * 
+ * Referencing images:
+ * 
+ * .example {
+ * 		background: url(../../plugins/pelagios-widgets-for-wordpress/inc/assets/js/build/images/arrow.png) no-repeat 0 0;
+ * }
+ */
