@@ -1,30 +1,42 @@
-(
-	function(){	
-		var icon_url = '../wp-content/plugins/pelagios-widgets-for-wordpress/inc/assets/images/wp_pelagios_icon.png';	
-		tinymce.create(
-			"tinymce.plugins.WpPelagiosShortcodes",
-			{
-				init: function(d,e) {},
-				createControl:function(d,e)
-				{				
-					if(d=="wp_pelagios_shortcodes_button")
-					{					
-						d=e.createMenuButton( "wp_pelagios_shortcodes_button",{
-							title:"Pelagios Shortcode",
-							image:icon_url,
-							icons:false
-							});							
-							var a=this;d.onRenderMenu.add(function(c,b)
-							{						
-								a.addImmediate(b,"Place", '[pelagios id=""]');
-							});
-						return d					
-					}					
-					return null
-				},		
-				addImmediate:function(d,e,a){d.add({title:e,onclick:function(){tinyMCE.activeEditor.execCommand( "mceInsertContent",false,a)}})}				
-			}
-		);		
-		tinymce.PluginManager.add( "WpPelagiosShortcodes", tinymce.plugins.WpPelagiosShortcodes);
-	}
-)();
+/**
+ * Pelagios Widgets for WordPress
+ *
+ * TinyMCE 4.0 editor plugin, requires WordPress 3.9 or higher
+ */
+(function(){
+    tinymce.PluginManager.add('wp_pelagios_mce_button', function( editor, url ){
+        editor.addButton( 'wp_pelagios_mce_button',{
+            text: false,
+            icon: 'wp-pelagios-mce-button',
+            type: 'menubutton',
+            menu: [
+                {
+                    text: 'Pelagios Place Widget',
+                    onclick: function(){
+                        editor.windowManager.open({
+                            title: 'Pelagios Place Widget',
+                            body: [
+                                {
+                                    type: 'textbox',
+                                    name: 'textID',
+                                    label: 'Pelagios ID',
+                                }
+                            ],
+                            onsubmit: function(e){
+                                editor.insertContent('[pelagios id="' + e.data.textID + '"]');
+                            }
+                        });
+                    }
+                },
+                {
+                    text: 'Pelagios Search Widget',
+                    onclick: function(){
+                        editor.insertContent('[pelagios_search]');
+                    }
+                }
+            ]
+        });
+    });
+})();
+
+/* end of file wp_pelagios_editor_plugin.js */

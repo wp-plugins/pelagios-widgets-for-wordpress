@@ -1,14 +1,11 @@
 <?php
-
 /**
- * Usage Page
+ * Admin Usage Page
  *
  * @package: Pelagios Widgets for WordPress
  *
- * @updated: 2012-08-05
+ * @updated: 2014-10-20
  */
-if ( ! function_exists( 'wp_pelagios_settings_usage_page' ) )
-{
 function wp_pelagios_settings_usage_page()
 {
 	global $wp_pelagios;
@@ -42,9 +39,8 @@ function wp_pelagios_settings_usage_page()
 	<h3 class="acc"><a href="#"><?php _e( 'Pelagios Places', 'wp_pelagios' ); ?></a></h3>
 	<div>
 		<p><?php _e( 'A Pelagios Place Widget takes the form of an icon, which when clicked, pops up information about a place. This includes a map and images associated with the place, as well as data drawn from Pelagios partners. It can be used on web pages where a particular place is mentioned to allow users of the page to view the Pelagios information associated with the place.', 'wp_pelagios' ); ?></p>
-		<style>#accordion_inside div{border-width:0;border-radius:0;padding:0 0 0 15px;border-left:4px solid #eaeaea}</style>
 		<div id="accordion_inside">
-		<h4 class="acc" aria-expanded="true"><a href="#"><?php _e( 'Shortcode', 'wp_pelagios' ); ?></a></h4>
+		<h3 class="acc" aria-expanded="false"><a href="#"><?php _e( 'Shortcode', 'wp_pelagios' ); ?></a></h4>
 		<div>
 		<p><?php _e( 'Pelagios Place widgets can be inserted in your post content with shortcodes. A Pelagios shortcode will automatically generate the required HTML markup for the Pelagios script, e.g.:', 'wp_pelagios' ); ?></p>
 		<p style="margin-left: 20px;"><code>[pelagios id="PLEIADES_ID"]</code></p>
@@ -52,7 +48,7 @@ function wp_pelagios_settings_usage_page()
 		<p style="margin-left: 20px;"><code>&lt;span id="WIDGET_ID" data-pleiades_id="PLEIADES_ID" class="pelagios pelagios-place" data-display_map="" data-icon="" data-mouseover=""&gt;&lt;/span&gt;</code></p>
 		<p><?php echo sprintf(	__( 'Visit the next tab for a real life <a href="%s">example</a>. See the section "Shortcode Parameters" below on how to retrieve the Pleiades ID for a place.', 'wp_pelagios' ), esc_url( admin_url() . 'options-general.php?page=wp-pelagios-settings&tab=examples' ) ); ?></p>
 		</div>
-		<h4 class="acc"><a href="#"><?php _e( 'Shortcode Parameters', 'wp_pelagios' ); ?></a></h4>
+		<h3 class="acc"><a href="#"><?php _e( 'Shortcode Parameters', 'wp_pelagios' ); ?></a></h4>
 		<div style="border-color:transparent">
 		<p><?php echo sprintf(	__( 'Seven shortcode parameters can be configured. In most cases a valid Pleiades <code>$id</code> will suffice. Setting optional parameters in a shortcode means you will override the default settings configured on the <a href="%s">settings page</a>.', 'wp_pelagios' ), esc_url( admin_url() . 'options-general.php?page=wp-pelagios-settings&tab=settings' ) ); ?></p>
 		<table class="widefat">
@@ -118,13 +114,13 @@ function wp_pelagios_settings_usage_page()
 		  </tbody>
 		</table>
 		</div>
-		<h4 class="acc"><a href="#"><?php _e( 'Shortcode Buttons', 'wp_pelagios' ); ?></a></h4>
+		<h3 class="acc"><a href="#"><?php _e( 'Shortcode Buttons', 'wp_pelagios' ); ?></a></h4>
 		<div>
 		<p><img src="<?php echo $wp_pelagios->plugin_dir_url; ?>inc/assets/images/wp_pelagios_icon.png" alt="button" title="button" class="alignright" style="width:24px;margin-right:11px;"/><?php _e( 'You can easily insert new Pelagios widgets in your post or page content via the tinyMCE shortcode button added to the visual editor.', 'wp_pelagios' ); ?></p>
 		<p><?php _e( 'Alternatively, you can insert shortcodes with the quicktag button added to the HTML editor.', 'wp_pelagios' ); ?></p>
 		<p><?php echo sprintf(	__( 'Visit the <a href="%s">settings tab</a> to enable or disable editor buttons functionality.', 'wp_pelagios' ), esc_url( admin_url() . 'options-general.php?page=wp-pelagios-settings&tab=settings' ) ); ?></p>
 		</div>
-		<h4 class="acc"><a href="#"><?php _e( 'Advanced', 'wp_pelagios' ); ?></a></h4>
+		<h3 class="acc"><a href="#"><?php _e( 'Advanced', 'wp_pelagios' ); ?></a></h4>
 		<div>
 		<p><?php _e( 'Pelagios Place widgets can be inserted directly in your template files using following code:', 'wp_pelagios' ); ?></p>
 		<p><code>&lt;?php echo do_shortcode( '[pelagios widget_id="MY_UNIQUE_WIDGET_ID" id="PLEIADES_ID"]' ); ?&gt;</code></p>
@@ -148,15 +144,14 @@ function wp_pelagios_settings_usage_page()
 		<h5><?php _e( 'AWLD.JS', 'wp_pelagios' ); ?></h5>
 		<?php echo sprintf( __( 'There is an unresolved issue at the moment with using Pelagios Widgets in combination with awld.js, related to the fact that both use require.js but different versions of it (see <a href="%s" target="_blank">this ticket</a> on Github).', 'wp_pelagios' ), esc_url( 'https://github.com/pelagios/pelagios-widgets/issues/104' ) ); ?></p>
 		<h4><?php _e( 'Find support', 'wp_pelagios' ); ?></h4>
-		<p><?php echo sprintf( __( 'If you have any issues with the Pelagios widgets, please contact Juliette Culver (j.culver@open.ac.uk) or raise an issue on <a href="%s" target="_blank">Github</a>.', 'wp_pelagios' ), esc_url( 'https://github.com/pelagios/pelagios-widgets/issues' ) ); ?></p>
+		<p><?php echo sprintf( __( 'If you have any issues with the Pelagios widgets, please contact %s (%s) or raise an issue on <a href="%s" target="_blank">Github</a>.', 'wp_pelagios' ), 'Juliette Culver', 'j.culver@open.ac.uk', esc_url( 'https://github.com/pelagios/pelagios-widgets/issues' ) ); ?></p>
 		<p><?php echo sprintf( __( 'If you have any issues with the WordPress plugin, please raise an issue on the WordPress <a href="%s" target="_blank">support forums</a>.', 'wp_pelagios' ), esc_url( 'http://wordpress.org/support/plugin/pelagios-widgets-for-wordpress' ) ); ?></p>
 	</div>
 </div>
 <script>
-jQuery(function() {
-	jQuery( "#accordion, #accordion_inside" ).accordion({ autoHeight: false });
-});
+jQuery(function($){$( "#accordion,#accordion_inside" ).accordion({heightStyle:"content"});});
 </script>
 <?php
 }
-}
+
+/* end of file admin-usage.php */
