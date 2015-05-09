@@ -2,13 +2,13 @@
 /**
  * Pelagios Search Widget (WordPress)
  * 
- * @package		Pelagios Widgets for WordPress
- * @category	Widgets
- * @author		Peter J. Herrel
+ * @package     Pelagios Widgets for WordPress
+ * @category    Widgets
+ * @author      Peter J. Herrel
  */
 
-class Wp_Pelagios_Search_Widget extends WP_Widget {
-
+class Wp_Pelagios_Search_Widget extends WP_Widget
+{
 	/** Variables to setup the widget. */
 	var $pelagios_widget_cssclass;
 	var $pelagios_widget_description;
@@ -33,7 +33,8 @@ class Wp_Pelagios_Search_Widget extends WP_Widget {
 	/** @see WP_Widget */
 	function widget( $args, $instance )
 	{	
-		//if( is_singular() && has_pelagios_shortcode( 'pelagios' ) )
+		//global $post;
+		//if( is_singular() && has_shortcode( $post->post_content, 'pelagios' ) )
 		//{
 			extract($args);
 
@@ -68,3 +69,5 @@ class Wp_Pelagios_Search_Widget extends WP_Widget {
 		<?php
 	}
 } // Wp_Pelagios_Search_Widget
+
+/* end of file widget-pelagios-search.php */

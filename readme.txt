@@ -2,9 +2,9 @@
 Contributors: donutz
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WAY79HJWYKPQE
 Tags: links, data, linked data, geo, semantic, lawdi, ancient world, history, ancient history, science, pelagios, widgets
-Requires at least: 3.3
-Tested up to: 3.5.1
-Stable tag: 0.1.1
+Requires at least: 3.9
+Tested up to: 4.2.2
+Stable tag: 0.2.0
 License: GPLv3
 
 The Pelagios widgets are small embeddable Javascript applications that allow users of your site to access ancient history data from Pelagios partners.
@@ -39,7 +39,7 @@ Pelagios Partners include: Google Ancient Places (Open University, Southampton),
 
 = Minimum Requirements =
 
-* WordPress 3.3 or greater
+* WordPress 3.9 or greater
 
 = Automatic installation =
 
@@ -57,14 +57,15 @@ Log in to your WordPress admin panel, navigate to the Plugins menu and use the s
 
 Find out more about the Pelagios Widgets project on [Github](https://github.com/pelagios/pelagios-widgets).
 
-* [Demo](http://pelagios.github.com/pelagios-widgets/demo/index.html)
-* [Docs](http://pelagios.github.com/pelagios-widgets/docs/index.html)
+* [Demo](http://pelagios.github.io/pelagios-widgets/demo/index.html)
+* [Docs](http://pelagios.github.io/pelagios-widgets/docs/index.html)
+* [Blog](http://pelagios-project.blogspot.co.uk/)
 
 = Where can I report bugs or request new features? =
 
 Bugs related to the Pelagios Widgets can be reported on [GitHub](https://github.com/pelagios/pelagios-widgets/issues).
 
-Bugs related to the WordPress plugin can be reported on the [WordPress support forums](http://wordpress.org/support/plugin/pelagios-widgets-for-wordpress) or on [GitHub](https://github.com/diggy/wp-pelagios).
+Bugs related to the WordPress plugin can be reported on the [WordPress support forums](http://wordpress.org/support/plugin/pelagios-widgets-for-wordpress) or on [GitHub](https://github.com/diggy/wp-pelagios/issues).
 
 Idem for feature requests.
 
@@ -80,6 +81,12 @@ Checkout and contribute to the plugin source code on [GitHub](https://github.com
 2. popup
 
 == Changelog ==
+
+= 0.2.0 - 09/05/2015 =
+* code cleanup
+* pelagios JS update
+* TinyMCE 4.0
+* requires WP 3.9+
 
 = 0.1.1 - 06/08/2012 = 
 * Initial release 0.1.1

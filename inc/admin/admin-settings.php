@@ -5,9 +5,9 @@
  * The options page contains settings for the Pelagios Widgets for WordPress plugin
  * This file contains functions to display and save the list of options.
  *
- * @author 		Peter J. Herrel
- * @category 	Admin
- * @package 	Pelagios Widgets for WordPress
+ * @author      Peter J. Herrel
+ * @category    Admin
+ * @package     Pelagios Widgets for WordPress
  */
 
 /**
@@ -238,3 +238,5 @@ function wp_pelagios_settings()
 	</script><?php
 }
 }
+
+/* end of file admin-settings.php */

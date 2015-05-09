@@ -1,13 +1,11 @@
 <?php
 /**
- * Examples Page
+ * Admin Demo Page
  *
  * @package: Pelagios Widgets for WordPress
  *
  * @updated: 03 jun 2012
  */
-if ( ! function_exists( 'wp_pelagios_settings_examples_page' ) )
-{
 function wp_pelagios_settings_examples_page()
 {
 	global $wp_pelagios;
@@ -94,4 +92,5 @@ function wp_pelagios_settings_examples_page()
 <p class="description" style="text-align:right;"><?php _e( 'Last updated:', 'wp_pelagios' ); ?> 05 Aug 2012</p>
 <?php
 }
-}
+
+/* end of file admin-examples.php */
